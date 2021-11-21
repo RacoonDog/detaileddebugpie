@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "detailed-debug-pie",
+  "version": "${version}",
+  "name": "Detailed Debug Pie",
+  "description": "Various improvements for the F3 debug pie",
+  "authors": [ "Crosby" ],
+  "contact": {
+    "discord": "Crosby#9153"
+  },
+  "license": "MIT",
+  "icon": "assets/detailed-debug-pie/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "io.github.racoondog.detaileddebugpie.DetailedDebugPieClient"
+    ]
+  },
+  "mixins": [
+    "detailed-debug-pie.mixins.json"
+  ],
+  "depends": {
+    "java": ">=16",
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": "1.17.x"
+  }
+}
