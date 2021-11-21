@@ -1,18 +1,19 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "io.github.racoondog.detaileddebugpie.client.mixin",
+  "package": "io.github.racoondog.detaileddebugpie.mixin",
   "compatibilityLevel": "JAVA_16",
   "client": [
-    "io.github.racoondog.detaileddebugpie.mixin.DebugHudMixin",
-    "io.github.racoondog.detaileddebugpie.mixin.GameRendererMixin",
-    "io.github.racoondog.detaileddebugpie.mixin.MinecraftClientMixin",
-    "io.github.racoondog.detaileddebugpie.mixin.RenderSystemMixin",
-    "io.github.racoondog.detaileddebugpie.mixin.TutorialManagerMixin",
-    "io.github.racoondog.detaileddebugpie.mixin.WindowMixin",
-    "io.github.racoondog.detaileddebugpie.mixin.InGameHudMixin",
-    "io.github.racoondog.detaileddebugpie.mixin.MusicTrackerMixin",
-    "io.github.racoondog.detaileddebugpie.mixin.SoundManagerMixin"
+    "DebugHudMixin",
+    "GameRendererMixin",
+    "MinecraftClientMixin",
+    "RenderSystemMixin",
+    "TutorialManagerMixin",
+    "WindowMixin",
+    "InGameHudMixin",
+    "MusicTrackerMixin",
+    "SoundManagerMixin",
+    "ScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
