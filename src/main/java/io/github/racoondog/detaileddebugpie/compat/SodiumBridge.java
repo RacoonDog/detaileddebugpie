@@ -47,6 +47,13 @@ public class SodiumBridge {
             return 0;
         }
     }
+    public static boolean getVignetteSetting() {
+        if (FabricLoader.getInstance().isModLoaded("sodium")) {
+            return SodiumClientMod.options().quality.enableVignette;
+        } else {
+            return false;
+        }
+    }
 
     private static long toMiB(long bytes) {
         return bytes / 1024L / 1024L;

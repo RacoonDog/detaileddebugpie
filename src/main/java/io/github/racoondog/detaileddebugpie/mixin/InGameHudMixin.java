@@ -1,5 +1,6 @@
 package io.github.racoondog.detaileddebugpie.mixin;
 
+import io.github.racoondog.detaileddebugpie.util.Util;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -23,7 +24,7 @@ public abstract class InGameHudMixin {
 
     @Inject(method = "updateVignetteDarkness", at = @At("HEAD"), cancellable = true)
     private void vignette(CallbackInfo ci) {
-        if (!MinecraftClient.isFancyGraphicsOrBetter()) ci.cancel(); //vignette calculation optimization
+        if (!Util.getVignette()) ci.cancel(); //vignette calculation optimization
         MinecraftClient.getInstance().getProfiler().swap("vignetteMath");
     }
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerInventory;getMainHandStack()Lnet/minecraft/item/ItemStack;", ordinal = 0))

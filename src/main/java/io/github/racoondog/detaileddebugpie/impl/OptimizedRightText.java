@@ -71,7 +71,7 @@ public class OptimizedRightText {
         out.set(1, parseMemory());
         out.set(3, parseOffheap());
         out.set(7, parseDisplay());
-        out.addAll(SodiumBridge.getMemoryDebugStrings());
+        out.addAll(SodiumBridge.getMemoryDebugStrings()); //@todo 4th line second variable can be cached
         return out;
     }
 
