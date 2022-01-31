@@ -4,29 +4,34 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@SuppressWarnings("ConstantConditions")
 @Environment(EnvType.CLIENT)
 @Mixin(Screen.class)
 public abstract class ScreenMixin {
-    @Inject(method = "updateNarrator", at = @At("HEAD"))
+    @Shadow @Nullable protected MinecraftClient client;
+
+    @Inject(method = "updateNarrator()V", at = @At("HEAD"))
     private void injectHeadNarrator(CallbackInfo ci) {
-        MinecraftClient.getInstance().getProfiler().push("updateNarrator");
+        client.getProfiler().push("updateNarrator");
     }
-    @Inject(method = "updateNarrator", at = @At("TAIL"))
+    @Inject(method = "updateNarrator()V", at = @At("TAIL"))
     private void injectTailNarrator(CallbackInfo ci) {
-        MinecraftClient.getInstance().getProfiler().pop();
+        client.getProfiler().pop();
     }
 
-    @Inject(method = "render", at = @At("HEAD"))
+    @Inject(method = "render(Lnet/minecraft/client/util/math/MatrixStack;IIF)V", at = @At("HEAD"))
     private void injectHeadScreen(CallbackInfo ci) {
-        MinecraftClient.getInstance().getProfiler().push("renderScreen");
+        client.getProfiler().push("renderScreen");
     }
-    @Inject(method = "render", at = @At("TAIL"))
+    @Inject(method = "render(Lnet/minecraft/client/util/math/MatrixStack;IIF)V", at = @At("TAIL"))
     private void injectTailScreen(CallbackInfo ci) {
-        MinecraftClient.getInstance().getProfiler().pop();
+        client.getProfiler().pop();
     }
 }

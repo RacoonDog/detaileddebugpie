@@ -4,27 +4,19 @@
 - `root.updateDisplay.swapBuffers.flipFrame.replayQueue`
 - `root.updateDisplay.limitDisplayFPS`  
 *(`root.updateDisplay.mouse` was moved to `root.updateDisplay.swapBuffers.flipFrame.mouse`)*
-- `root.gameRenderer.renderCurrentScreen`
-- `root.gameRenderer.renderOverlay`
+- `root.gameRenderer.renderScreen`
 - `root.gameRenderer.updateNarrator`
 - `root.gameRenderer.gui.debug.leftText`
-- `root.gameRenderer.gui.debug.rightText`  
-- `root.gameRenderer.gui.debug.metrics`  
+- `root.gameRenderer.gui.debug.rightText`
+- `root.gameRenderer.gui.debug.metrics`
 - `root.tick.level.soundSystemTick`
 - `root.tick.level.trackMusic`
 - `root.tick.level.tutorialTick`
 - `root.tick.gui.vignetteMath`
 - `root.tick.gui.guiTick`
-- `root.tick.gui.itemTooltip`  
+- `root.tick.gui.itemTooltip`
 - `root.fpsPie.renderText`
 - `root.fpsPie.render`
-
-## Optimizations:
-
-- Caches static debug menu items such as java version, cpu, gpu, etc.
-- Skips vignette darkness calculation if vignette is disabled.
-
-## Deciphering:
 
 ### `root.updateDisplay`
 If `root.updateDisplay` is taking a high percentage of your `root` debug pie:

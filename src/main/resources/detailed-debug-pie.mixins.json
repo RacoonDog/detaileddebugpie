@@ -2,19 +2,17 @@
   "required": true,
   "minVersion": "0.8",
   "package": "io.github.racoondog.detaileddebugpie.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "client": [
-    "debughud.DebugHudMixin",
-    "debughud.DebugHudOptimizationMixin",
-    "GameRendererMixin",
+    "DebugHudMixin",
     "InGameHudMixin",
     "MinecraftClientMixin",
     "MusicTrackerMixin",
-    "RenderSystemMixin",
     "ScreenMixin",
     "SoundManagerMixin",
     "TutorialManagerMixin",
-    "WindowMixin"
+    "WindowMixin",
+    "RenderSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
