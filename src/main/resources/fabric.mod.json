@@ -6,10 +6,13 @@
   "description": "Various improvements for the F3 debug pie",
   "authors": [ "Crosby" ],
   "contact": {
-    "discord": "Crosby#9153"
+    "discord": "Crosby#9153",
+    "sources": "https://github.com/RacoonDog/detaileddebugpie",
+    "issues": "https://github.com/RacoonDog/detaileddebugpie/issues",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/detailed-debug-pie"
   },
   "license": "MIT",
-  "icon": "assets/detailed-debug-pie/icon.png",
+  "icon": "assets/detaileddebugpie/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
@@ -17,7 +20,7 @@
     ]
   },
   "mixins": [
-    "detailed-debug-pie.mixins.json"
+    "detaileddebugpie.mixins.json"
   ],
   "depends": {
     "java": ">=17",
